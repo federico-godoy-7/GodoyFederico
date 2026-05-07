@@ -11,9 +11,10 @@ let personajes = []
     })
 
     function comparar() {
+        personajes.filter
         personajes.sort((a, b) => a.age - b.age)
-        personajes.slice(0, 5)
-        personajes.forEach(personajes => {
-            resultado.innerHTML += `<p> Nombre: ${personajes.name} - ${personajes.age} años`
-    )}
+        let jovenes = personajes.slice(0, 5)
+        jovenes.forEach(personajes => { resultado.innerHTML += `<p> Nombre: ${personajes.name} - ${personajes.age} años </p>`})
+    }
+
     comparar()

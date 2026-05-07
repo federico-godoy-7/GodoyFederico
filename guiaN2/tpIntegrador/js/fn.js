@@ -18,17 +18,12 @@ function buscarUsuario() {
       const lat = parseFloat(usuario.location.coordinates.latitude);
       const lon = parseFloat(usuario.location.coordinates.longitude);
 
-      if (marcador) {
-        mapa.removeLayer(marcador);
-      }
-
       mapa.setView([lat, lon], 8);
       marcador = L.marker([lat, lon]).addTo(mapa);
 
-
       resultado.innerHTML = `
         <p><strong>Nombre completo:</strong> ${usuario.name.first} ${usuario.name.last}</p>
-        <img src="${usuario.picture.large}" alt="foto" />
+        <img src="${usuario.picture.large}/>
         <p><strong>Correo:</strong> ${usuario.email}</p>
         <p><strong>Teléfono:</strong> ${usuario.phone}</p>
         <p><strong>Ciudad y país:</strong> ${usuario.location.city}, ${usuario.location.country}</p>
